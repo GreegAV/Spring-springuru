@@ -30,6 +30,7 @@ public class BootStrapData implements CommandLineRunner {
         publisher.setCity("Kyiv");
         publisher.setState("Ukraine");
         publisher.setZip("01001");
+        publisherRepository.save(publisher);
 
         Author eric = new Author("Eric", "Evans");
         Book ddd = new Book("DDD", "123345");
@@ -41,7 +42,7 @@ public class BootStrapData implements CommandLineRunner {
 
         authorRepository.save(eric);
         bookRepository.save(ddd);
-        publisherRepository.save(publisher);
+
 
         System.out.println("Books: " + bookRepository.count());
         System.out.println("Authors: " + authorRepository.count());
